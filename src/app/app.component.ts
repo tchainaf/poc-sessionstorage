@@ -8,12 +8,13 @@ import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 })
 
 export class AppComponent {
-  info: string = "";
-  show: boolean = false;
-  dadoSalvo: string = "";
+  info: string = '';
+  showInfo: boolean = false;
+  dadoSalvo: string = '';
 
-  constructor(@Inject(SESSION_STORAGE) private storage: StorageService) {
-  }
+  constructor(
+    @Inject(SESSION_STORAGE) private storageService: StorageService
+  ) { }
 
   salvarDado(): void {
 

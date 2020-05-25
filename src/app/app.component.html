@@ -7,17 +7,21 @@
 <div class="container">
 	<header>
 		<h1>POC de Session Storage</h1>
-		<h3>Testando o armazenamento, busca e exclusão de um dado armazenado no Session Storage</h3>
+		<h3>Testando o uso do armazenamento no Session Storage</h3>
 	</header>
 	<hr />
-	
+
 	<div class="row">
-		<h4>1. Armazenando um dado no Session Storage </h4>
-		<p>Insira um texto no campo abaixo e clique em Armazenar.</p>
+		<h4>1. Armazenando um dado no Session Storage</h4>
+		<p>
+			Insira um texto no campo abaixo e clique em Armazenar.
+			Esse dado ficará armazenado <br /> nessa aba, sendo
+			inacessível ao abrir uma nova aba nesse mesmo endereço.
+		</p>
 	</div>
 	<div class="row">
-		<label>Texto para teste: </label>
-		<input id="info" type="text" [(ngModel)]="info">
+		<label>Informação para teste: </label>
+		<input id="info" type="text" [(ngModel)]="info" />
 		<button class="btn btn-primary" (click)="salvarDado()">Armazenar</button>
 	</div>
 
@@ -27,13 +31,15 @@
 	</div>
 	<div class="row">
 		<button class="btn btn-primary" (click)="buscarDado()">Buscar</button>
-		<span *ngIf="show"> Valor armazenado: {{ dadoSalvo }}</span>
+		<span *ngIf="showInfo"> Valor armazenado: {{ dadoSalvo }}</span>
 	</div>
 
 	<div class="row">
 		<h4>3. Deletando um dado do Session Storage</h4>
-		<p>Ao clicar em Deletar, o dado armazenado será apagado. <br />
-			<b>Você pode checar se foi mesmo apagado clicando no botão Buscar.</b> </p>
+		<p>
+			Ao clicar em Deletar ou ao fechar essa aba, o dado armazenado será apagado. <br />
+			Você pode checar se foi mesmo apagado clicando no botão Buscar.
+		</p>
 	</div>
 	<div class="row">
 		<button class="btn btn-primary" (click)="deletarDado()">Deletar</button>
